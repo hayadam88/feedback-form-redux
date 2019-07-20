@@ -11,10 +11,11 @@ class Comments extends Component {
 
     render() {
         return(
-            <div>
+            <form onSubmit={this.handleSubmit}>
                 <p>Care to share any comments?</p>
-                <button onClick={this.handleSubmit}>Next</button>
-            </div>
+                <input required type="text" size="35" placeholder="Please enter a comment"></input>
+                <button>Submit comment</button>
+            </form>
         )
     }
 
