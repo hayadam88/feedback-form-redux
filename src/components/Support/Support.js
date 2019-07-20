@@ -4,9 +4,25 @@ import {connect} from 'react-redux';
 
 class Support extends Component {
 
-    handleSubmit = (event) => {
-        this.props.history.push('/comments')
-    } // handle submit
+     state = {
+         support: 0
+     }
+
+     handleChangeFor = (propertyName, event) => {
+         this.setState({
+
+             [propertyName]: event.target.value
+
+         })
+     }
+
+     handleSubmit = (event) => {
+         this.props.history.push('/comments')
+         this.props.dispatch({
+             type: `SET_SUPPORT`,
+             payload: this.state
+         })
+     }
 
     render() {
         return(

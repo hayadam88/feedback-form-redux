@@ -21,7 +21,7 @@ class Feelings extends Component {
              type: `SET_FEELINGS`,
              payload: this.state
          })
-    } // handle submit
+    } 
 
     render() {
         return(
