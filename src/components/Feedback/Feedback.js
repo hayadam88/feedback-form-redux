@@ -23,6 +23,9 @@ class Feedback extends Component {
 }
 
 
+const mapStateToProps = (reduxStore) => ({
+    reduxStore
+})
 
 
-export default connect()(Feedback);
+export default connect(mapStateToProps)(Feedback);
