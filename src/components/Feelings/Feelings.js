@@ -7,11 +7,11 @@ class Feelings extends Component {
 
     state = { feelings: 0 }
 
-      handleChangeFor = (propertyName, event) => {
+    handleChangeFor = (propertyName, event) => {
           this.setState({
-              customer: {
+              
                   [propertyName]: event.target.value
-              }
+              
           })
       }
 
