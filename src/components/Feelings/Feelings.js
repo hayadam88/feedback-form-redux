@@ -11,6 +11,7 @@ class Feelings extends Component {
     render() {
         return(
             <>
+                <p>How are you feeling?</p>
                 <button onClick={this.handleSubmit}>FEELINGS</button>
             </>
         )

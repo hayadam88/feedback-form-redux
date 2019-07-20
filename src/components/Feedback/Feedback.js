@@ -11,7 +11,11 @@ class Feedback extends Component {
     render() {
         return(
             <>
-                <button onClick={this.handleSubmit}>START SURVEY</button>
+                <h1>Review your Feedback</h1>
+                <h2>Feelings: </h2>
+                <h2>Understanding: </h2>
+                <h2>Support: </h2>
+                <h2>Comments: </h2>
             </>
         )
     }
