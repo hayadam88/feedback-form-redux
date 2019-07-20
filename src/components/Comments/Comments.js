@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import './feelings.css'
 
 
-class Feelings extends Component {
+
+class Comments extends Component {
 
     handleSubmit = (event) => {
-        this.props.history.push('/understanding')
+        this.props.history.push('/review')
     } // handle submit
 
     render() {
         return(
             <div>
-                <p>How are you feeling?</p>
+                <p>Care to share any comments?</p>
                 <button onClick={this.handleSubmit}>Next</button>
             </div>
         )
@@ -23,4 +23,4 @@ class Feelings extends Component {
 
 
 
-export default connect()(Feelings);
+export default connect()(Comments);

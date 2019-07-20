@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 class Feedback extends Component {
 
     handleSubmit = (event) => {
-        this.props.history.push('/feedback/feelings')
+        this.props.history.push('/understanding')
     } // handle submit
 
     render() {
