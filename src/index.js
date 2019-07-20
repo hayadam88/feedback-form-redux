@@ -31,13 +31,21 @@ const supportReducer = (state = {}, action) => {
     return state;
 }
 
+const commentReducer = (state = {}, action) => {
+    console.log('In commentReducer');
+    if (action.type === 'SET_COMMENT'){
+        return action.payload;
+    }
+    return state;
+}
+
 const reduxStore = createStore(
     combineReducers({
     feelingsReducer,
     understandingReducer,
     supportReducer,
-    
-    }),
+    commentReducer,
+     }),
     applyMiddleware(logger)
 );
 
