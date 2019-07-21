@@ -18,8 +18,8 @@ class Comments extends Component {
      }
     
     handleSubmit = (event) => {
-        this.props.history.push('/review')
-        document.getElementById("submitBtn").disabled = false;
+        this.props.history.push('/feedback')
+        // document.getElementById("submitBtn").disabled = false;
         this.props.dispatch({
             type: `SET_COMMENT`,
             payload: this.state

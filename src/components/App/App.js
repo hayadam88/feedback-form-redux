@@ -12,9 +12,9 @@ import Finish from '../Finish/Finish'
 
 class App extends Component {
 
-   componentDidMount() {
-     this.disableButton();
-   }
+  //  componentDidMount() {
+  //    this.disableButton();
+  //  }
 
    disableButton = () => {
       document.getElementById("submitBtn").disabled = true;
@@ -37,12 +37,10 @@ class App extends Component {
           <Route path='/understanding' component={Understanding} />
           <Route path='/support' component={Support} />
           <Route path='/comments' component={Comments} />
-          <Route path='/review' component={Review} />
-          <Route path='/finish' component={Finish} />
+          <Route path='/feedback' component={Feedback} />
       </Router>
       <br />
       <hr />
-      <Feedback />
 
     </>
     );

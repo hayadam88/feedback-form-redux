@@ -15,7 +15,7 @@ class Feedback extends Component {
 
     handleFinalSubmit = () => {
         console.log('Clicked submit feedback', this.state);
-        document.getElementById("submitBtn").disabled = true;
+        // document.getElementById("submitBtn").disabled = true;
          Axios.post('/feedback', this.state)
          .then(response => {
              console.log(response);
