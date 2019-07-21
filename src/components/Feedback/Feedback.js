@@ -6,15 +6,22 @@ import Axios from 'axios';
 class Feedback extends Component {
 
     state = {
-        feelings: this.props.reduxStore.feelingsReducer.feelings,
-        understanding: this.props.reduxStore.understandingReducer.understanding,
-        support: this.props.reduxStore.supportReducer.support,
-        comment: this.props.reduxStore.commentReducer.comment
+        feeling: 0,
+        understanding: 0,
+        support: 0,
+        comments: ''     
     }
 
 
-    handleFinalSubmit = () => {
-        console.log('Clicked submit feedback');
+    handleFinalSubmit = (event) => {
+        this.setState({
+            feeling: this.props.reduxStore.feelingsReducer.feelings,
+            understanding: this.props.reduxStore.understandingReducer.understanding,
+            support: this.props.reduxStore.supportReducer.support,
+            comments: this.props.reduxStore.commentReducer.comment 
+        })
+        console.log('Clicked submit feedback', this.state);
+        document.getElementById("submitBtn").disabled = true;
          Axios.post('/feedback', this.state)
          .then(response => {
              console.log(response);
@@ -32,7 +39,7 @@ class Feedback extends Component {
                 <h2>Understanding: {this.props.reduxStore.understandingReducer.understanding}</h2>
                 <h2>Support: {this.props.reduxStore.supportReducer.support} </h2>
                 <h2>Comments: {this.props.reduxStore.commentReducer.comment}</h2>
-                <button onClick={this.handleFinalSubmit}>SUBMIT FEEDBACK</button>
+                <button onClick={this.handleFinalSubmit} id="submitBtn">SUBMIT FEEDBACK</button>
             </>
         )
     }

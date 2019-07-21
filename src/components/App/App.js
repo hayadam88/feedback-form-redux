@@ -8,8 +8,20 @@ import Understanding from '../Understanding/Understanding'
 import Support from '../Support/Support'
 import Comments from '../Comments/Comments'
 import Review from '../Review/Review'
+import Finish from '../Finish/Finish'
 
 class App extends Component {
+
+   componentDidMount() {
+     this.disableButton();
+   }
+
+   disableButton = () => {
+      document.getElementById("submitBtn").disabled = true;
+   }
+
+
+
   render() {
     return (
      <> 
@@ -26,6 +38,7 @@ class App extends Component {
           <Route path='/support' component={Support} />
           <Route path='/comments' component={Comments} />
           <Route path='/review' component={Review} />
+          <Route path='/finish' component={Finish} />
       </Router>
       <br />
       <hr />

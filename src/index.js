@@ -7,7 +7,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const feelingsReducer = (state = {}, action) => {
+const feelingsReducer = (state = {feelings: 0}, action) => {
     console.log('In feelingsReducer');
      if (action.type === 'SET_FEELINGS') {
          return action.payload;
@@ -15,7 +15,7 @@ const feelingsReducer = (state = {}, action) => {
     return state;
 }
 
-const understandingReducer = (state = {}, action) => {
+const understandingReducer = (state = {understanding: 0}, action) => {
     console.log('In understandingReducer');
     if (action.type === 'SET_UNDERSTANDING') {
         return action.payload;
@@ -23,7 +23,7 @@ const understandingReducer = (state = {}, action) => {
     return state;
 }
 
-const supportReducer = (state = {}, action) => {
+const supportReducer = (state = {support: 0}, action) => {
     console.log('In supportReducer');
     if (action.type === 'SET_SUPPORT') {
         return action.payload;
@@ -31,7 +31,7 @@ const supportReducer = (state = {}, action) => {
     return state;
 }
 
-const commentReducer = (state = {}, action) => {
+const commentReducer = (state = {comments: ''}, action) => {
     console.log('In commentReducer');
     if (action.type === 'SET_COMMENT'){
         return action.payload;
