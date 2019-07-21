@@ -7,7 +7,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const feelingsReducer = (state = {feelings: 0}, action) => {
+const feelingsReducer = (state = {feeling: 0}, action) => {
     console.log('In feelingsReducer');
      if (action.type === 'SET_FEELINGS') {
          return action.payload;

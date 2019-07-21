@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 class Comments extends Component {
 
     state = {
-          comment: ''
+          comments: ''
       }
 
      handleChangeFor = (propertyName, event) => {
@@ -31,7 +31,7 @@ class Comments extends Component {
             <div>
                 <p>Care to share any comments?</p>
                 <input required type="text" size="35" placeholder="Please enter a comment"
-                 onChange={ (event) => this.handleChangeFor('comment', event)}></input>
+                 onChange={ (event) => this.handleChangeFor('comments', event)}></input>
                 <button onClick={this.handleSubmit}>Submit comment</button>
             </div>
         )
