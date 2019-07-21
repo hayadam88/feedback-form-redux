@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import Axios from 'axios';
 
 
 class Feedback extends Component {
@@ -11,11 +12,17 @@ class Feedback extends Component {
         comment: this.props.reduxStore.commentReducer.comment
     }
 
-    handleSubmit = (event) => {
-        console.log('Adding Feelings Feedback', this.state.feelings);
-        
-        this.props.history.push('/understanding')
-    } // handle submit
+
+    handleFinalSubmit = () => {
+        console.log('Clicked submit feedback');
+         Axios.post('/feedback', this.state)
+         .then(response => {
+             console.log(response);
+             // this.props.history.push('/');
+         }).catch(err => {
+             console.log(err);
+         })
+     }
 
     render() {
         return(
@@ -25,6 +32,7 @@ class Feedback extends Component {
                 <h2>Understanding: {this.props.reduxStore.understandingReducer.understanding}</h2>
                 <h2>Support: {this.props.reduxStore.supportReducer.support} </h2>
                 <h2>Comments: {this.props.reduxStore.commentReducer.comment}</h2>
+                <button onClick={this.handleFinalSubmit}>SUBMIT FEEDBACK</button>
             </>
         )
     }
