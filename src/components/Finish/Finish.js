@@ -8,7 +8,7 @@ class Finish extends Component {
     render() {
         return(
             <>
-                <h1>You did it!</h1>
+                <h1>Thank you for submitting your feedback!</h1>
             </>
         )
     }

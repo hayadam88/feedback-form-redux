@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Axios from 'axios';
 
 
-class Feedback extends Component {
+class FinalFeedback extends Component {
 
     state = {
             feeling: this.props.reduxStore.feelingsReducer.feeling,
@@ -18,7 +18,6 @@ class Feedback extends Component {
          Axios.post('/feedback', this.state)
          .then(response => {
              console.log(response);
-             this.props.history.push('/finish')
          }).catch(err => {
              console.log(err);
          })
@@ -33,7 +32,7 @@ class Feedback extends Component {
                 <h2>Understanding: {this.props.reduxStore.understandingReducer.understanding}</h2>
                 <h2>Support: {this.props.reduxStore.supportReducer.support} </h2>
                 <h2>Comments: {this.props.reduxStore.commentReducer.comments}</h2>
-                <button onClick={this.handleFinalSubmit} id="submitBtn">SUBMIT FEEDBACK</button>
+                <button onClick={this.handleFinalSubmit}>SUBMIT FEEDBACK</button>
             </>
         )
     }
@@ -46,4 +45,4 @@ const mapStateToProps = (reduxStore) => ({
 })
 
 
-export default connect(mapStateToProps)(Feedback);
+export default connect(mapStateToProps)(FinalFeedback);

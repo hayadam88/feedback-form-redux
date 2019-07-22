@@ -7,18 +7,11 @@ import Feedback from '../Feedback/Feedback'
 import Understanding from '../Understanding/Understanding'
 import Support from '../Support/Support'
 import Comments from '../Comments/Comments'
-import Review from '../Review/Review'
 import Finish from '../Finish/Finish'
+
 
 class App extends Component {
 
-  //  componentDidMount() {
-  //    this.disableButton();
-  //  }
-
-   disableButton = () => {
-      document.getElementById("submitBtn").disabled = true;
-   }
 
 
 
@@ -29,6 +22,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
+          <p>Feelings: {this.props.reduxStore.feelingsReducer.feeling}  Understanding: {this.props.reduxStore.understandingReducer.understanding} Support: {this.props.reduxStore.supportReducer.support}</p>
+          
+          <p>Comments: {this.props.reduxStore.commentReducer.comments}</p>
         </header>
       </div>
       <Router>
@@ -38,6 +34,7 @@ class App extends Component {
           <Route path='/support' component={Support} />
           <Route path='/comments' component={Comments} />
           <Route path='/feedback' component={Feedback} />
+          <Route path='/finish' component={Finish} />
       </Router>
       <br />
       <hr />
