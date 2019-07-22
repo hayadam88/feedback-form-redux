@@ -7,6 +7,8 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+
+// Information about the Feelings feedback will be stored in this reducer
 const feelingsReducer = (state = {feeling: 0}, action) => {
     console.log('In feelingsReducer');
      if (action.type === 'SET_FEELINGS') {
@@ -15,6 +17,7 @@ const feelingsReducer = (state = {feeling: 0}, action) => {
     return state;
 }
 
+// Information about the Understanding feedback will be stored in this reducer
 const understandingReducer = (state = {understanding: 0}, action) => {
     console.log('In understandingReducer');
     if (action.type === 'SET_UNDERSTANDING') {
@@ -23,6 +26,7 @@ const understandingReducer = (state = {understanding: 0}, action) => {
     return state;
 }
 
+// Information about the Support feedback will be stored in this reducer
 const supportReducer = (state = {support: 0}, action) => {
     console.log('In supportReducer');
     if (action.type === 'SET_SUPPORT') {
@@ -31,6 +35,7 @@ const supportReducer = (state = {support: 0}, action) => {
     return state;
 }
 
+// Information from the Comment feedback will be stored in this reducer
 const commentReducer = (state = {comments: ''}, action) => {
     console.log('In commentReducer');
     if (action.type === 'SET_COMMENT'){
