@@ -5,6 +5,7 @@ import Axios from 'axios';
 
 class Feedback extends Component {
 
+    // The local state is set to the updated feedback values stored in the redux Store
     state = {
             feeling: this.props.reduxStore.feelingsReducer.feeling,
             understanding: this.props.reduxStore.understandingReducer.understanding,
@@ -12,7 +13,8 @@ class Feedback extends Component {
             comments: this.props.reduxStore.commentReducer.comments     
             }
 
-
+    // This pushes our local state, defined above, to our database. It also loads
+    // the /finish component
     handleFinalSubmit = () => {
         console.log('Clicked submit feedback', this.state);
          Axios.post('/feedback', this.state)
