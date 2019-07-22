@@ -4,10 +4,13 @@ import {connect} from 'react-redux';
 
 class Understanding extends Component {
 
+    // Declares a local state with an empty value of 0; this will eventually get updated and its
+    // updated value is what is eventually sent to the redux Store
     state = {
         understanding: 0
     }
 
+    // Sets the local state
     handleChangeFor = (propertyName, event) => {
         this.setState({
 
@@ -16,6 +19,8 @@ class Understanding extends Component {
         })
     }
 
+    // This dispatches the payload, the local state, to the understandingReducer
+    // and then it loads the /support route
     handleSubmit = (event) => {
         this.props.history.push('/support')
         this.props.dispatch({

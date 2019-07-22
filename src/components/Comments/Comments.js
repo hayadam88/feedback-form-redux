@@ -5,10 +5,14 @@ import {connect} from 'react-redux';
 
 class Comments extends Component {
 
+
+    // Declares a local state with an empty value of an empty string; this will eventually get updated and its
+    // updated value is what is eventually sent to the redux Store
     state = {
           comments: ''
       }
 
+    // This sets the local state
      handleChangeFor = (propertyName, event) => {
          this.setState({
 
@@ -17,6 +21,8 @@ class Comments extends Component {
          })
      }
     
+    // This dispatches the payload, the local state, to the commentReducer
+    // and then it loads the /feedback route
     handleSubmit = (event) => {
         this.props.history.push('/feedback')
         // document.getElementById("submitBtn").disabled = false;

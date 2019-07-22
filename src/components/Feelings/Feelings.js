@@ -19,6 +19,7 @@ class Feelings extends Component {
       }
 
     // This dispatches the payload, the local state, to the feelingsReducer
+    // and then it loads the /understanding route
     handleSubmit = (event) => {
         this.props.history.push('/understanding')
          this.props.dispatch({

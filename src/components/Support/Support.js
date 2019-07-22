@@ -4,10 +4,14 @@ import {connect} from 'react-redux';
 
 class Support extends Component {
 
+
+     // Declares a local state with an empty value of 0; this will eventually get updated and its
+     // updated value is what is eventually sent to the redux Store
      state = {
          support: 0
      }
 
+     // Sets the local state
      handleChangeFor = (propertyName, event) => {
          this.setState({
 
@@ -16,6 +20,8 @@ class Support extends Component {
          })
      }
 
+     // This dispatches the payload, the local state, to the supportReducer
+     // and then it loads the /comments route
      handleSubmit = (event) => {
          this.props.history.push('/comments')
          this.props.dispatch({
