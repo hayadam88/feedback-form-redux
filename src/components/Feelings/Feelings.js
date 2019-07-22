@@ -5,8 +5,11 @@ import './feelings.css'
 
 class Feelings extends Component {
 
+    // Declares a local state with an empty value of 0; this will eventually get updated and its
+    // updated value is what is eventually sent to the redux Store
     state = { feeling: 0 }
 
+    // Sets the local state
     handleChangeFor = (propertyName, event) => {
           this.setState({
               
@@ -15,6 +18,7 @@ class Feelings extends Component {
           })
       }
 
+    // This dispatches the payload, the local state, to the feelingsReducer
     handleSubmit = (event) => {
         this.props.history.push('/understanding')
          this.props.dispatch({

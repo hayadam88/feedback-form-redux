@@ -12,9 +12,6 @@ import Finish from '../Finish/Finish'
 
 class App extends Component {
 
-
-
-
   render() {
     return (
      <> 
@@ -22,6 +19,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
+          {/* Displays the updated results of the feedback while the user inputs them. */}
           <p>Feelings: {this.props.reduxStore.feelingsReducer.feeling}  Understanding: {this.props.reduxStore.understandingReducer.understanding} Support: {this.props.reduxStore.supportReducer.support}</p>
           
           <p>Comments: {this.props.reduxStore.commentReducer.comments}</p>
